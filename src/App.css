@@ -1,0 +1,26 @@
+hr {
+color: #97c728;
+}
+.reviewBox {
+  padding: 15px 15px;
+  border: 2px solid #97c728;
+  border-radius: 5px;
+}
+.sentance {
+  text-align: center;
+  font-size: 22px;
+}
+.wordBox {
+  margin:10px 10px;
+  padding: 5px 5px;
+  text-align: left;
+}
+span {
+  display: inline-block;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-size: 18px;
+}
+.match {
+  background-color: yellow;
+}
