@@ -1,0 +1,10 @@
+.sentence {
+  text-align: center;
+  font-size: 22px;
+}
+.match {
+  display: inline-block;
+  padding: 0px 7px;
+  background: rgba(249, 161, 50, .4);
+  border-radius: 5px;
+}

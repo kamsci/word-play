@@ -1,0 +1,12 @@
+hr {
+  border: .5px dashed #97c728;
+  width: 70%;
+}
+
+.reviewBox {
+  padding: 15px 15px;
+  border: 2px solid #97c728;
+  border-radius: 5px;
+  width: 60%;
+  margin: auto auto;
+}
