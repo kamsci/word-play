@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Sentence from './Sentence';
-import WordList from './WordList';
+import SentenceReviewCard from './SentenceReviewCard';
 
 //////////////////////////////////////////
 
@@ -11,8 +10,7 @@ class App extends Component {
       <div>
         <h1>Demo</h1>
         <div>
-          <Sentence />
-          <WordList />
+          <SentenceReviewCard />
         </div>
       </div>
 
