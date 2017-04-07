@@ -15,7 +15,14 @@ class App extends Component {
           <i className="fa fa-3x fa-circle-thin blue"></i>
         </div>
         <div>
+          <p className="intro">Click on one of the alternative words to view the sentence with different word options:</p>
           <SentenceReviewCard />
+        </div>
+        <div className="footer">
+            <p className="name">powered by KristaCalderon</p>
+            <p className="github">sourceCode:
+              <a href="https://github.com/kamsci/word-play"><i className="fa fa-2x fa-github"></i></a>
+            </p>
         </div>
       </div>
 
