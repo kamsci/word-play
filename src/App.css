@@ -1,1 +1,18 @@
-
+.header {
+  margin-bottom: 40px;
+}
+.fa {
+  padding-left: 5px;
+}
+.green {
+  color: #97c728;
+}
+.orange {
+  color: rgb(249, 161, 50)
+}
+.red {
+  color: #d94c92;
+}
+.blue {
+  color: #1c97cd;
+}
