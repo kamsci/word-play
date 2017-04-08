@@ -20,6 +20,11 @@ class JobReviewCardContainer extends Component {
           WordList: ["implement", "fulfil", "deliver"]
         },
         {
+          sentence: 'For this position, outside the box thinking is a must.',
+          wordInUse: 'outside the box',
+          wordList: ['creative', 'imaginative', 'innovative' ]
+        },
+        {
           sentence: "You will work closely with engineering, design, operations, finance and executive teams to bring features to market and develop and grow business opportunities for Super Games. ",
           wordInUse: "work closely",
           WordList: ["collaborate", "work in partnership", "join forces"]

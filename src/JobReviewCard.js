@@ -18,7 +18,7 @@ class JobReviewCard extends Component {
         </div>
         <div>
           <p className="intro">Click on one of the alternative words to replace the highlighted word in your sentence:</p>
-          <SentenceReviewCard job={this.props.job} />
+          <SentenceReviewCard job={this.props.job[0]} />
           <DescriptionReviewCard title={this.props.title} job={this.props.job} />
         </div>
       </div>

@@ -6,10 +6,13 @@ import './SentenceReviewCard.css';
 ///////////////////////////////////////////
 
 class SentenceReviewCard extends Component {
-  state = {
-    sentence: 'For this position, outside the box thinking is a must.',
-    wordInUse: 'outside the box',
-    wordList: ['creative', 'imaginative', 'innovative' ]
+  constructor(props) {
+    super(props);
+    this.state = {
+      sentence: props.job.sentence,
+      wordInUse: props.job.wordInUse,
+      wordList: props.job.WordList
+    }
   }
 
   wordSwapAction = (newWord) => {
@@ -28,11 +31,12 @@ class SentenceReviewCard extends Component {
     })
   }
 
-  sentenceBoxStyle = {
+  sentenceReviewStyle = {
     display: "inline-block",
     width: "100%",
     textAlign: "center",
-    fontSize: "22px"
+    fontSize: "20px",
+    lineHeight: "30px"
   }
   
       
@@ -40,7 +44,7 @@ class SentenceReviewCard extends Component {
     return (
       <div className="container shadow">
         <div className="reviewBox">
-          <Sentence sentenceStyle={this.sentenceBoxStyle} sentence={this.state.sentence} wordInUse={this.state.wordInUse}/>
+          <Sentence sentenceStyle={this.sentenceReviewStyle} sentence={this.state.sentence} wordInUse={this.state.wordInUse}/>
           <hr />
           <WordList words={this.state.wordList} wordInUse={this.state.wordInUse} wordSwapRequest={this.wordSwapAction} />
         </div>
