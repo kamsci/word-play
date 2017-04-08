@@ -10,6 +10,12 @@ class App extends Component {
     return (
       <div>
         <JobReviewCardContainer />
+        <div className="footer">
+          <p className="name">powered by KristaCalderon</p>
+          <p className="github pull-right">sourceCode:
+            <a href="https://github.com/kamsci/word-play" target="_blank"><i className="fa fa-2x fa-github"></i></a>
+          </p>
+        </div>
       </div>
     );
   }

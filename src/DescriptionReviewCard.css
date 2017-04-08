@@ -4,7 +4,8 @@
   color: #6c696a;
 }
 .descriptionBox {
-  margin-top: 20px;
+  margin-top: 50px;
+  margin-bottom: 50px;
   padding: 5px 50px;
   border-left: 1px solid lightgrey;
   border-right: 1px solid lightgrey;

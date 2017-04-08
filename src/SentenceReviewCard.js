@@ -31,6 +31,11 @@ class SentenceReviewCard extends Component {
     })
   }
 
+  sentanceClickNoAction = (sentenceObj) => {
+    // No action on sentence from SentenceReviewCard
+    return;
+  }
+
   sentenceReviewStyle = {
     display: "inline-block",
     width: "100%",
@@ -44,9 +49,13 @@ class SentenceReviewCard extends Component {
     return (
       <div className="container shadow">
         <div className="reviewBox">
-          <Sentence sentenceStyle={this.sentenceReviewStyle} sentence={this.state.sentence} wordInUse={this.state.wordInUse}/>
+          <Sentence sentenceStyle={this.sentenceReviewStyle} 
+                    sentence={this.state.sentence} 
+                    wordInUse={this.state.wordInUse}
+                    onClickFunction={this.sentanceClickNoAction} />
           <hr />
-          <WordList words={this.state.wordList} wordInUse={this.state.wordInUse} wordSwapRequest={this.wordSwapAction} />
+          <WordList words={this.state.wordList} 
+                    wordSwapRequest={this.wordSwapAction} />
         </div>
       </div>
     )

@@ -6,7 +6,15 @@ import DescriptionReviewCard from './DescriptionReviewCard';
 //////////////////////////////////////////
 
 class JobReviewCard extends Component {
-
+  constructor(props) {
+    super(props);
+    this.state = {
+      title: props.title,
+      job: props.job,
+      activeIndex: 0
+    }
+  }
+  
   render() {
     return (
       <div>
@@ -18,8 +26,8 @@ class JobReviewCard extends Component {
         </div>
         <div>
           <p className="intro">Click on one of the alternative words to replace the highlighted word in your sentence:</p>
-          <SentenceReviewCard job={this.props.job[0]} />
-          <DescriptionReviewCard title={this.props.title} job={this.props.job} />
+          <SentenceReviewCard job={this.state.job[this.state.activeIndex]} />
+          <DescriptionReviewCard title={this.state.title} job={this.props.job} />
         </div>
       </div>
 
