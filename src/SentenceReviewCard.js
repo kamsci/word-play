@@ -27,13 +27,20 @@ class SentenceReviewCard extends Component {
       wordList: this.state.wordList
     })
   }
+
+  sentenceBoxStyle = {
+    display: "inline-block",
+    width: "100%",
+    textAlign: "center",
+    fontSize: "22px"
+  }
   
       
   render() {
     return (
-      <div className="container">
+      <div className="container shadow">
         <div className="reviewBox">
-          <Sentence sentence={this.state.sentence} wordInUse={this.state.wordInUse}/>
+          <Sentence sentenceStyle={this.sentenceBoxStyle} sentence={this.state.sentence} wordInUse={this.state.wordInUse}/>
           <hr />
           <WordList words={this.state.wordList} wordInUse={this.state.wordInUse} wordSwapRequest={this.wordSwapAction} />
         </div>

@@ -1,8 +1,11 @@
+.shadow {
+  padding-bottom: 20px;
+  box-shadow: 0px 5px 3px lightgrey;
+}
 hr {
   border: .5px dashed #97c728;
   width: 70%;
 }
-
 .reviewBox {
   padding: 15px 15px;
   border: 2px solid #97c728;

@@ -1,0 +1,10 @@
+.page {
+  width: 75%;
+  margin: auto auto;
+  color: #6c696a;
+}
+.descriptionBox {
+  margin-top: 20px;
+  padding: 5px 50px;
+  border: 1px solid lightgrey;
+}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import SentenceReviewCard from './SentenceReviewCard';
+import DescriptionReviewCard from './DescriptionReviewCard';
 
 //////////////////////////////////////////
 
@@ -17,12 +18,7 @@ class App extends Component {
         <div>
           <p className="intro">Click on one of the alternative words to view the sentence with different word options:</p>
           <SentenceReviewCard />
-        </div>
-        <div className="footer">
-            <p className="name">powered by KristaCalderon</p>
-            <p className="github">sourceCode:
-              <a href="https://github.com/kamsci/word-play"><i className="fa fa-2x fa-github"></i></a>
-            </p>
+          <DescriptionReviewCard />
         </div>
       </div>
 
