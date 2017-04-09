@@ -6,6 +6,11 @@ import './DescriptionReviewCard.css';
 
 class DescriptionReviewCard extends Component {
 
+  handleClick = (idx) => {
+    console.log("D: ", idx)
+    this.props.passClickFunction(idx)
+  }
+
   sentenceDescriptionStyle = {
     fontSize: "18px",
     lineHeight: "30px",
@@ -18,7 +23,11 @@ class DescriptionReviewCard extends Component {
         <div className="descriptionBox">
           <h3>{this.props.title}</h3>
           <p>{this.props.job.map((sentenceObj, i) =>
-            <Sentence key={i} sentenceStyle={this.sentenceDescriptionStyle} sentence={sentenceObj.sentence} wordInUse={sentenceObj.wordInUse}/>
+            <Sentence key={i} 
+                      sentenceStyle={this.sentenceDescriptionStyle} 
+                      sentence={sentenceObj.sentence} 
+                      wordInUse={sentenceObj.wordInUse}
+                      onClickFunction={() => this.handleClick(i)} />
           )}
           </p>
         </div>

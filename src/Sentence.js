@@ -6,7 +6,7 @@ import './Sentence.css';
 class Sentence extends Component {
 
   handleClick = () => {
-    this.props.onClickFunction(this.props.sentenceObj)
+    this.props.onClickFunction()
   }
   
   render() {
@@ -15,7 +15,8 @@ class Sentence extends Component {
     parts.splice(1, 0, <span className="match" key={1}>{this.props.wordInUse}</span>);
 
     return(
-      <span style={this.props.sentenceStyle}>{parts}</span>
+      <span style={this.props.sentenceStyle}
+            onClick={this.handleClick}>{parts}</span>
     )
   }
   

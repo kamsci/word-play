@@ -8,6 +8,7 @@ import './SentenceReviewCard.css';
 class SentenceReviewCard extends Component {
   constructor(props) {
     super(props);
+    
     this.state = {
       sentence: props.job.sentence,
       wordInUse: props.job.wordInUse,
@@ -21,17 +22,19 @@ class SentenceReviewCard extends Component {
     
     // switch word in sentance to wordList
     let idx = this.state.wordList.indexOf(newWord);
-    let newWordInUse = this.state.wordList.splice(idx, 1, this.state.wordInUse);
+    // set state.wordList to variable to not change state directly
+    let words = this.state.wordList;
+    let newWordInUse = words.splice(idx, 1, this.state.wordInUse);
     
     // update state
     this.setState({
       sentence: newSentence,
       wordInUse: newWordInUse,
-      wordList: this.state.wordList
+      wordList: words
     })
   }
 
-  sentanceClickNoAction = (sentenceObj) => {
+  sentanceClickNoAction = () => {
     // No action on sentence from SentenceReviewCard
     return;
   }
