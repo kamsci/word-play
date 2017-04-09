@@ -20,7 +20,7 @@ class JobReviewCardContainer extends Component {
           wordList: ["implement", "fulfil", "deliver"]
         },
         {
-          sentence: 'For this position, outside the box thinking is a must.',
+          sentence: 'For this position, outside the box thinking is a must. ',
           wordInUse: 'outside the box',
           wordList: ['creative', 'imaginative', 'innovative' ]
         },

@@ -15,7 +15,6 @@ class JobReviewCard extends Component {
   }
 
   selectSentenceForReview = (idx) => {
-    console.log("This ", this)
     this.setState({
       activeIndex: idx
     })

@@ -39,8 +39,8 @@ class SentenceReviewCard extends Component {
     return;
   }
 
-  updateJobRequest = () => {
-    console.log("SRC clicked");
+  updateJobRequest = (e) => {
+    e.preventDefault();
     this.props.passUpdateJobRequest(this.state.sentence, this.state.wordInUse, this.state.wordList)
   }
 

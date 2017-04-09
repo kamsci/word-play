@@ -7,7 +7,6 @@ import './DescriptionReviewCard.css';
 class DescriptionReviewCard extends Component {
 
   handleClick = (idx) => {
-    console.log("D: ", idx)
     this.props.passClickFunction(idx)
   }
 
@@ -27,7 +26,7 @@ class DescriptionReviewCard extends Component {
                       sentenceStyle={this.sentenceDescriptionStyle} 
                       sentence={sentenceObj.sentence} 
                       wordInUse={sentenceObj.wordInUse}
-                      onClickFunction={() => this.handleClick(i)} />
+                      onClickFunction={() => this.handleClick(i)} /> 
           )}
           </p>
         </div>
