@@ -7,6 +7,7 @@ import './DescriptionReviewCard.css';
 class DescriptionReviewCard extends Component {
 
   handleClick = (idx) => {
+    window.scrollTo(100, 0);
     this.props.passClickFunction(idx)
   }
 

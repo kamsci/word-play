@@ -48,8 +48,8 @@ class SentenceReviewCard extends Component {
     display: "inline-block",
     width: "100%",
     textAlign: "center",
-    fontSize: "20px",
-    lineHeight: "30px"
+    fontSize: "18px",
+    lineHeight: "25px"
   }
   
       
