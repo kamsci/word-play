@@ -1,6 +1,35 @@
-For my first foray into React, I will create a small application that identifies a key word in a sentance and list alternative word choices underneath. 
+## Word Play
+w: kristacalderon.com/word-play
 
-The user can select an alternative word choice and update the sentance to use the newly selected word. The original word in the sentance now becomes an alternative word choice. 
+#### Summary
+For my first foray into React, I created a small application that allows a user to view a job description and change highlighted words to a suggested alternative. 
+
+   The application has 2 main user sections:  
+* Sentence Review and Update
+* Job Description
+
+In the Job Description section, the user can click on a sentence and bring it to the Sentence Review section for updating. 
+
+In the Sentence Review section, the use can replace the highlighted word with one of the alternative choices by clicking on it. When the user clicks 'Update', the sentance and the Job Description section is updated with the new selected word.
+
+For now, only one word can be highlighted and replaced per sentance.
+
+#### Component Tree
+* App
+  * JobReviewCardContainer (get data here; hardcoded for now)
+    * JobReviewCard
+      * SentenceReviewCard
+        * Sentence
+        * WordList
+      * DescriptionCard
+        * Sentence 
+
+#### Data Assumptions
+ - The job is an array of objects containing 3 keys: 'sentence', 'wordInUse', 'wordOptions'.
+ - Each 'sentance' contains a single key word that has already been flagged and is defined as the 'wordInUse. 
+ - A list of alternative word options have been identified and are listed in an array in 'wordOptions'. 
+ - The 'wordInUse' only exists a singular time in a sentance and not at the beginning. 
+   - Example: If 'wordInUse' is 'creative', this scenario is not supported > "Creative thinking is a must in this creative position."
 
 ---------------------------------------
 
