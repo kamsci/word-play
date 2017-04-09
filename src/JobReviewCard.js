@@ -21,9 +21,9 @@ class JobReviewCard extends Component {
     })
   }
 
-  passUpdateJobRequest = () => {
+  passUpdateJobRequest = (sentence, wordInUse, wordList) => {
     console.log("JRC clicked")
-    this.props.passUpdateJobRequest()
+    this.props.passUpdateJobRequest(this.state.activeIndex, sentence, wordInUse, wordList)
   }
   
   render() {

@@ -12,7 +12,7 @@ class SentenceReviewCard extends Component {
     this.state = {
       sentence: props.job.sentence,
       wordInUse: props.job.wordInUse,
-      wordList: props.job.WordList
+      wordList: props.job.wordList
     }
   }
 
@@ -41,7 +41,7 @@ class SentenceReviewCard extends Component {
 
   updateJobRequest = () => {
     console.log("SRC clicked");
-    this.props.passUpdateJobRequest()
+    this.props.passUpdateJobRequest(this.state.sentence, this.state.wordInUse, this.state.wordList)
   }
 
   sentenceReviewStyle = {
