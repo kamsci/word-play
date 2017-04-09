@@ -8,14 +8,13 @@ import DescriptionReviewCard from './DescriptionReviewCard';
 class JobReviewCard extends Component {
   constructor(props) {
     super(props);
-    
+
     this.state = {
       activeIndex: 0
     }
   }
 
   selectSentenceForReview = (idx) => {
-    console.log("Set ", idx)
     console.log("This ", this)
     this.setState({
       activeIndex: idx
@@ -34,6 +33,7 @@ class JobReviewCard extends Component {
         <div>
           <p className="intro">Click on one of the alternative words to replace the highlighted word in your sentence:</p>
           <SentenceReviewCard
+            key={this.state.activeIndex}
             job={this.props.job[this.state.activeIndex]} />
           <DescriptionReviewCard 
             title={this.props.title} 
