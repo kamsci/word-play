@@ -39,6 +39,11 @@ class SentenceReviewCard extends Component {
     return;
   }
 
+  updateJobRequest = () => {
+    console.log("SRC clicked");
+    this.props.passUpdateJobRequest()
+  }
+
   sentenceReviewStyle = {
     display: "inline-block",
     width: "100%",
@@ -59,6 +64,10 @@ class SentenceReviewCard extends Component {
           <hr />
           <WordList words={this.state.wordList} 
                     wordSwapRequest={this.wordSwapAction} />
+          <div>
+            <button className="btn" type="button"
+                    onClick={this.updateJobRequest}>Update</button>
+          </div>
         </div>
       </div>
     )

@@ -47,8 +47,19 @@ class JobReviewCardContainer extends Component {
     */
   }
 
+  updateJob = () => {
+    console.log("Container click");
+    // let tempJob = this.state.job;
+    // tempJob[idx] = 
+    // this.setState({
+    //   job:
+    // })
+  }
+
   render() {
-    return <JobReviewCard title={this.state.title} job={this.state.job}/>;
+    return <JobReviewCard title={this.state.title} 
+                          job={this.state.job}
+                          passUpdateJobRequest={this.updateJob} />;
   }
 }
 
