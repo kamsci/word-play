@@ -27,5 +27,6 @@
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/kamsci/word-play/issues"
-  }
+  },
+  "homepage": "https://kamsci.github.io/word-play"
 }
