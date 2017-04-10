@@ -6,10 +6,14 @@ import './SentenceReviewCard.css';
 ///////////////////////////////////////////
 
 class SentenceReviewCard extends Component {
-  state = {
-    sentence: 'For this position, outside the box thinking is a must.',
-    wordInUse: 'outside the box',
-    wordList: ['creative', 'imaginative', 'innovative' ]
+  constructor(props) {
+    super(props);
+    
+    this.state = {
+      sentence: props.job.sentence,
+      wordInUse: props.job.wordInUse,
+      wordList: props.job.wordList
+    }
   }
 
   wordSwapAction = (newWord) => {
@@ -18,24 +22,51 @@ class SentenceReviewCard extends Component {
     
     // switch word in sentance to wordList
     let idx = this.state.wordList.indexOf(newWord);
-    let newWordInUse = this.state.wordList.splice(idx, 1, this.state.wordInUse);
+    // set state.wordList to variable to not change state directly
+    let words = this.state.wordList;
+    let newWordInUse = words.splice(idx, 1, this.state.wordInUse);
     
     // update state
     this.setState({
       sentence: newSentence,
       wordInUse: newWordInUse,
-      wordList: this.state.wordList
+      wordList: words
     })
+  }
+
+  sentanceClickNoAction = () => {
+    // No action on sentence from SentenceReviewCard
+    return;
+  }
+
+  updateJobRequest = () => {
+    this.props.passUpdateJobRequest(this.state.sentence, this.state.wordInUse, this.state.wordList)
+  }
+
+  sentenceReviewStyle = {
+    display: "inline-block",
+    width: "100%",
+    textAlign: "center",
+    fontSize: "18px",
+    lineHeight: "25px"
   }
   
       
   render() {
     return (
-      <div className="container">
+      <div className="container shadow">
         <div className="reviewBox">
-          <Sentence sentence={this.state.sentence} wordInUse={this.state.wordInUse}/>
+          <Sentence sentenceStyle={this.sentenceReviewStyle} 
+                    sentence={this.state.sentence} 
+                    wordInUse={this.state.wordInUse}
+                    onClickFunction={this.sentanceClickNoAction} />
           <hr />
-          <WordList words={this.state.wordList} wordInUse={this.state.wordInUse} wordSwapRequest={this.wordSwapAction} />
+          <WordList words={this.state.wordList} 
+                    wordSwapRequest={this.wordSwapAction} />
+          <div>
+            <button className="btn" type="button"
+                    onClick={this.updateJobRequest}>Update</button>
+          </div>
         </div>
       </div>
     )

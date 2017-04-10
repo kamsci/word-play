@@ -1,12 +1,23 @@
+.shadow {
+  padding-bottom: 30px;
+  box-shadow: 0px 5px 3px lightgrey;
+}
 hr {
   border: .5px dashed #97c728;
   width: 70%;
+  margin-bottom: 10px;
 }
-
 .reviewBox {
   padding: 15px 15px;
   border: 2px solid #97c728;
   border-radius: 5px;
-  width: 60%;
+  width: 70%;
   margin: auto auto;
+}
+.btn {
+  background-color: #97c728;
+  color: #fff;
+}
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
+    outline: 0;
 }

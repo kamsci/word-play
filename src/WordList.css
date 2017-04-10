@@ -1,11 +1,11 @@
 .wordBox {
-  margin:10px 10px;
+  margin: 0px 10px;
   padding: 5px 5px;
   text-align: center;
 }
 .wordList {
   display: inline-block;
   cursor: pointer;
-  padding: 10px 20px;
+  padding: 5px 20px;
   font-size: 18px;
 }
