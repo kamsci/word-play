@@ -39,8 +39,7 @@ class SentenceReviewCard extends Component {
     return;
   }
 
-  updateJobRequest = (e) => {
-    e.preventDefault();
+  updateJobRequest = () => {
     this.props.passUpdateJobRequest(this.state.sentence, this.state.wordInUse, this.state.wordList)
   }
 

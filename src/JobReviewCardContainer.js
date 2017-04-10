@@ -6,7 +6,16 @@ class JobReviewCardContainer extends Component {
 
   constructor() {
     super();
-    this.state = {
+    this.state = this.futureDatabaseCall();
+  }
+
+  futureDatabaseCall() {
+    /*  Could replace hard-coded job with database call 
+      
+      ajax({
+      });
+    */
+    return {
       title: "Senior Product Manager - Game Commerce",
       job: [
         {
@@ -38,15 +47,6 @@ class JobReviewCardContainer extends Component {
     }
   }
 
-  futureDatabaseCall() {
-    /*  Replace hard-coded job
-        Populate state.title and state.job from database call 
-      
-      ajax({
-      });
-    */
-  }
-
   updateJob = (idx, sentence, wordInUse, wordList) => {
     let tempJob = this.state.job;
     tempJob[idx].sentence = sentence;
@@ -57,6 +57,8 @@ class JobReviewCardContainer extends Component {
     this.setState({
       job: tempJob
     })
+
+    // Save to database
   }
 
   render() {
