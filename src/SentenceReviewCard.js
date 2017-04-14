@@ -66,6 +66,10 @@ class SentenceReviewCard extends Component {
           <div>
             <button className="btn" type="button"
                     onClick={this.updateJobRequest}>Update</button>
+            <div className="arrows pull-right">
+              <button className="btn arrow"><i className="fa fa-arrow-left"></i></button>
+              <button className="btn arrow"><i className="fa fa-arrow-right"></i></button>
+            </div>
           </div>
         </div>
       </div>

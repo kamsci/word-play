@@ -21,3 +21,13 @@ hr {
 .btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
     outline: 0;
 }
+.arrows {
+  display: inline-block;
+}
+.arrow {
+  background-color: #1c97cd;
+  margin-left: 10px;
+  font-weight: normal;
+/*  height: 20px;
+  width: 20px;*/
+}
