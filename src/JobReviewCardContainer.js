@@ -28,9 +28,9 @@ class JobReviewCardContainer extends Component {
           wordList: [["identify", "outline"],["advance", "promote", "enrich"]]
         },
         {
-          sentence: "As a Senior Product Manager for Super Games Game Commerce, you will execute a product road map that adds great value to Super Games’s viewers, broadcasters, and participating game developers. ",
-          wordInUse: ["execute"],
-          wordList: [["implement", "fulfil", "deliver"]]
+          sentence: "As a Senior Product Manager for Super Games Game Commerce, you will define, execute, and deliver a product road map that adds great value to Super Games’s viewers, broadcasters, and participating game developers. ",
+          wordInUse: ["define","execute", "deliver"],
+          wordList: [["identify", "outline"],["implement", "fulfil", "deliver"], ["implement", "fulfil", "execute"]]
         },
         {
           sentence: 'For this position, outside the box thinking is a must. ',
@@ -39,7 +39,7 @@ class JobReviewCardContainer extends Component {
         },
         {
           sentence: "You will work closely with engineering, design, operations, finance and executive teams to bring features to market and develop business opportunities for Super Games. ",
-          wordInUse: ["work closely", "market", "develop"],
+          wordInUse: ["work closely", "develop"],
           wordList: [["collaborate", "work in partnership", "join forces"], ["create", "expand", "advance"]]
         },
         {

@@ -46,6 +46,30 @@ class SentenceReviewCard extends Component {
     return;
   }
 
+  wordInUseLeftNav = () => {
+    let newActiveIndx;
+    if(this.state.activeWordIdx > 0) {
+      newActiveIndx = this.state.activeWordIdx - 1;
+    } else {
+      newActiveIndx = this.state.wordInUse.length - 1;
+    }
+    this.setState ({
+      activeWordIdx: newActiveIndx
+    })
+  }
+
+  wordInUseRightNav = () => {
+    let newActiveIndx;
+    if(this.state.activeWordIdx < this.state.wordInUse.length - 1) {
+      newActiveIndx = this.state.activeWordIdx + 1;
+    } else {
+      newActiveIndx = 0;
+    }
+    this.setState ({
+      activeWordIdx: newActiveIndx
+    })
+  }
+
   updateJobRequest = () => {
     this.props.passUpdateJobRequest(this.state.sentence, this.state.wordInUse, this.state.wordList)
   }
@@ -58,6 +82,9 @@ class SentenceReviewCard extends Component {
     lineHeight: "25px"
   }
   
+  componentDidUpdate = () => {
+    console.log(this.state)
+  }
       
   render() {
     return (
@@ -75,8 +102,8 @@ class SentenceReviewCard extends Component {
             <button className="btn" type="button"
                     onClick={this.updateJobRequest}>Update</button>
             <div className="arrows pull-right">
-              <button className="btn arrow"><i className="fa fa-arrow-left"></i></button>
-              <button className="btn arrow"><i className="fa fa-arrow-right"></i></button>
+              <button onClick={this.wordInUseLeftNav} className="btn arrow"><i className="fa fa-arrow-left"></i></button>
+              <button onClick={this.wordInUseRightNav} className="btn arrow"><i className="fa fa-arrow-right"></i></button>
             </div>
           </div>
         </div>
