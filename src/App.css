@@ -67,3 +67,12 @@
   margin-bottom: 20px;
   color: #565354;
 }
+
+/*All buttons*/
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
+    outline: 0;
+    color: #fff;
+}
+.btn:hover {
+  color: #fff;
+}
