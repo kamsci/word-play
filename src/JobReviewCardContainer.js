@@ -4,10 +4,9 @@ import JobReviewCard from './JobReviewCard';
 class JobReviewCardContainer extends Component {
   /* Container class to handle source of data*/
 
-  constructor() {
-    super();
-    this.state = this.futureDatabaseCall();
-  }
+  // constructor() {
+  //   super();
+  // }
 
   // Get paragraph from input
 
@@ -17,7 +16,7 @@ class JobReviewCardContainer extends Component {
 
   // Replace key words in sentence with span elements
 
-  
+
 
   render() {
     return <JobReviewCard  />;

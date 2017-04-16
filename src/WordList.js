@@ -6,7 +6,7 @@ import './WordList.css';
 const WordList = (props) => {
   return (
     <div className="wordBox">
-
+  
     </div>
   )
 }

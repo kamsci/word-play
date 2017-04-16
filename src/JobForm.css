@@ -1,0 +1,13 @@
+.form {
+  /*width: 70%;*/
+  margin-top: 50px;
+  margin-bottom: 50px;
+  padding: 5px 50px;
+}
+#description {
+  min-height: 300px;
+}
+.btn {
+  background-color: #97c728;
+  color: #fff;
+}
