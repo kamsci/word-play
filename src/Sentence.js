@@ -16,10 +16,8 @@ class Sentence extends Component {
 
     for(var i = 0; i < wordsArr.length; i++) {
       let re = new RegExp(this.props.wordInUse[i], "i")
-      console.log("re", re)
 
       let temp = sentenceArr[sentanceFormatIdx].split(re);
-      console.log("temp", temp, sentanceFormatIdx)
       if(i === this.props.activeWordIdx) {
         temp.splice(1, 0, <span className="match active" key={i}>{wordsArr[i]}</span>);
       } else {
@@ -30,7 +28,6 @@ class Sentence extends Component {
       sentenceArr = sentenceArr.concat(temp);
 
       sentanceFormatIdx = sentanceFormatIdx + 2;
-      console.log("new", sentenceArr, sentenceArr.length)
     }
 
     return(

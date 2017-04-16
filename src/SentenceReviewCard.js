@@ -18,21 +18,27 @@ class SentenceReviewCard extends Component {
   }
 
   wordSwapAction = (newWord) => {
-    // replace word in sentance
-    let newSentence = this.state.sentence.replace(this.state.wordInUse, newWord);
-    
-    // switch word in sentance to wordList
-    let idx = this.state.wordList.indexOf(newWord);
-    // set state.wordList to variable to not change state directly
+    // create local variables
+    let wordIdx = this.state.activeWordIdx;
+    let word = this.state.wordInUse;
     let words = this.state.wordList;
-    let newWordInUse = words.splice(idx, 1, this.state.wordInUse);
+
+    // replace word with newWord in sentance
+    let newSentence = this.state.sentence.replace(word[wordIdx], newWord);
+    
+    // switch word with newWord in wordList
+    let idx = words[wordIdx].indexOf(newWord);
+    words[wordIdx].splice(idx, 1, word[wordIdx]);
+    word.splice(wordIdx, 1, newWord);
     
     // update state
     this.setState({
       sentence: newSentence,
-      wordInUse: newWordInUse,
+      wordInUse: word,
       wordList: words
     })
+    let wordTemp = this.state.wordInUse;
+    wordTemp.splice(wordIdx, 1, newWord)
   }
 
   sentanceClickNoAction = () => {
