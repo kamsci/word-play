@@ -9,6 +9,10 @@ class JobReviewCardContainer extends Component {
     this.state = this.futureDatabaseCall();
   }
 
+  futureServerSideWork = () => {
+
+  }
+
   futureDatabaseCall() {
     /*  Could replace hard-coded job with database call 
       
@@ -20,28 +24,28 @@ class JobReviewCardContainer extends Component {
       job: [
         {
           sentence: "The Super Games Seattle team is seeking a Senior Product Manager to define and drive user experiences for our Game Commerce projects. ",
-          wordInUse: "drive",
-          wordList: ["advance", "promote", "enrich"]
+          wordInUse: ["define", "drive"],
+          wordList: [["identify", "outline"],["advance", "promote", "enrich"]]
         },
         {
           sentence: "As a Senior Product Manager for Super Games Game Commerce, you will execute a product road map that adds great value to Super Games’s viewers, broadcasters, and participating game developers. ",
-          wordInUse: "execute",
-          wordList: ["implement", "fulfil", "deliver"]
+          wordInUse: ["execute"],
+          wordList: [["implement", "fulfil", "deliver"]]
         },
         {
           sentence: 'For this position, outside the box thinking is a must. ',
-          wordInUse: 'outside the box',
-          wordList: ['creative', 'imaginative', 'innovative' ]
+          wordInUse: ["outside the box"],
+          wordList: [["creative", "imaginative", "innovative" ]]
         },
         {
-          sentence: "You will work closely with engineering, design, operations, finance and executive teams to bring features to market and develop and grow business opportunities for Super Games. ",
-          wordInUse: "work closely",
-          wordList: ["collaborate", "work in partnership", "join forces"]
+          sentence: "You will work closely with engineering, design, operations, finance and executive teams to bring features to market and develop business opportunities for Super Games. ",
+          wordInUse: ["work closely", "market", "develop"],
+          wordList: [["collaborate", "work in partnership", "join forces"], ["create", "expand", "advance"]]
         },
         {
           sentence: "We’d like your help leading one of Super Games’s signature initiatives for 2017. ",
-          wordInUse: "leading",
-          wordList: ["piloting", "steering", "directing"]
+          wordInUse: ["leading"],
+          wordList: [["piloting", "steering", "directing"]]
         }
       ]
     }

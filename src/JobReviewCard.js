@@ -10,18 +10,18 @@ class JobReviewCard extends Component {
     super(props);
 
     this.state = {
-      activeIndex: 0
+      activeSentenceIndex: 0
     }
   }
 
   selectSentenceForReview = (idx) => {
     this.setState({
-      activeIndex: idx
+      activeSentenceIndex: idx
     })
   }
 
   passUpdateJobRequest = (sentence, wordInUse, wordList) => {
-    this.props.passUpdateJobRequest(this.state.activeIndex, sentence, wordInUse, wordList)
+    this.props.passUpdateJobRequest(this.state.activeSentenceIndex, sentence, wordInUse, wordList)
   }
   
   render() {
@@ -29,8 +29,8 @@ class JobReviewCard extends Component {
       <div>
         <p className="intro">Click on one of the alternative words to replace the highlighted word in your sentence:</p>
         <SentenceReviewCard
-          key={this.state.activeIndex}
-          job={this.props.job[this.state.activeIndex]}
+          key={this.state.activeSentenceIndex}
+          job={this.props.job[this.state.activeSentenceIndex]}
           passUpdateJobRequest={this.passUpdateJobRequest}
            />
         <DescriptionReviewCard 

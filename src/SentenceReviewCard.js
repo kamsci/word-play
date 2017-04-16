@@ -10,6 +10,7 @@ class SentenceReviewCard extends Component {
     super(props);
     
     this.state = {
+      activeWordIdx: 0,
       sentence: props.job.sentence,
       wordInUse: props.job.wordInUse,
       wordList: props.job.wordList
@@ -59,9 +60,10 @@ class SentenceReviewCard extends Component {
           <Sentence sentenceStyle={this.sentenceReviewStyle} 
                     sentence={this.state.sentence} 
                     wordInUse={this.state.wordInUse}
+                    activeWordIdx={this.state.activeWordIdx}
                     onClickFunction={this.sentanceClickNoAction} />
           <hr />
-          <WordList words={this.state.wordList} 
+          <WordList words={this.state.wordList[this.state.activeWordIdx]} 
                     wordSwapRequest={this.wordSwapAction} />
           <div>
             <button className="btn" type="button"
