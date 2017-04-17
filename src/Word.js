@@ -10,17 +10,37 @@ class Word extends Component {
     super(props);
 
     this.state = {
+      word: props.word,
       isTooltipActive: false
     }
   }
 
   showTooltip = () => {
-        this.setState({isTooltipActive: true})
+    this.setState({isTooltipActive: true})
+  }
+
+  hideTooltip = () => {
+    this.setState({isTooltipActive: false})
+  }
+
+  changeWord = (syn) => {
+    this.setState({
+      word: syn
+    })
+  }
+
+  style = {
+    style: {
+      // background: 'rgba(0,0,0,.8)',
+      border: '1px solid rgba(249, 161, 50, 1)',
+      padding: 20,
+      boxShadow: '5px 5px 3px rgba(0,0,0,.3)'
+    },
+    arrowStyle: {
+      borderColor: 'rgba(249, 161, 50, 1)'
     }
-    hideTooltip = () => {
-        this.setState({isTooltipActive: false})
-    }
- 
+  }
+
   render() {
     let id = "#";
     if(this.props.word.props) {
@@ -28,12 +48,13 @@ class Word extends Component {
     }
     return (
       <span>
-        <span onMouseEnter={this.showTooltip.bind(this)} onMouseLeave={this.hideTooltip.bind(this)}>{this.props.word} </span>
+        <span onMouseEnter={this.showTooltip.bind(this)} onMouseLeave={this.hideTooltip.bind(this)}>{this.state.word} </span>
         {this.props.word.props && 
-          <ToolTip active={this.state.isTooltipActive} position="top" arrow="center" parent={id}>
+          <ToolTip active={this.state.isTooltipActive} style={this.style} position="top" arrow="center" parent={id}>
             <SynonymPick key={id} 
-                         synonyms={this.props.synonyms}
-                         wordObj={this.props.word} />
+                          synonyms={this.props.synonyms}
+                          wordObj={this.props.word}
+                          changeWord={this.changeWord} />
           </ToolTip>
         }
       </span>
