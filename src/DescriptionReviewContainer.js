@@ -22,18 +22,19 @@ class DescriptionReviewContainer extends Component {
     for(var i =0; i <inputArr.length; i++) {
       let tempPhrase2 = inputArr[i] + " " + inputArr[i+1];
       let tempPhrase3 = inputArr[i] + " " + inputArr[i+1] + " " + inputArr[i+2];
+      let id = "W" + i;
 
         // if single key word
       if(this.isKeyWord(inputArr[i]) === true) {
-        descriptionArr.push(<span className="match" key={i}>{inputArr[i]}</span>)
+        descriptionArr.push(<span id={id} className="match" key={i}>{inputArr[i]}</span>)
       } // if 2 word phrase
       else if (this.isKeyWord(tempPhrase2) === true) {
-        descriptionArr.push(<span className="match" key={i}>{tempPhrase2}</span>)
+        descriptionArr.push(<span id={id} className="match" key={i}>{tempPhrase2}</span>)
         i++;
       } // if 3 word phrase
       else if (this.isKeyWord(tempPhrase3) === true) { 
-        descriptionArr.push(<span className="match" key={i}>{tempPhrase3}</span>)
-        i = i + 2;
+        descriptionArr.push(<span id={id} className="match" key={i}>{tempPhrase3}</span>)
+        i += 2;
       } 
       else {
         descriptionArr.push(inputArr[i]);
@@ -46,7 +47,7 @@ class DescriptionReviewContainer extends Component {
   isKeyWord = (word) => {
     word = word.toLowerCase();
     word = word.replace(/(,|:|\.)/g, "");
-    console.log(word)
+
     if(dictionary.hasOwnProperty(word)) {
       this.synonyms[word] = dictionary[word];
       return true;
