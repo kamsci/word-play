@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import './Word.css';
+import SynonymPick from './SynonymPick'
 import ToolTip from 'react-portal-tooltip';
+import './Word.css';
+
 ///////////////////////////////////////////
 
 class Word extends Component {
@@ -29,9 +31,9 @@ class Word extends Component {
         <span onMouseEnter={this.showTooltip.bind(this)} onMouseLeave={this.hideTooltip.bind(this)}>{this.props.word} </span>
         {this.props.word.props && 
           <ToolTip active={this.state.isTooltipActive} position="top" arrow="center" parent={id}>
-            <div>
-              <p>This is the content of the tooltip</p>
-            </div>
+            <SynonymPick key={id} 
+                         synonyms={this.props.synonyms}
+                         wordObj={this.props.word} />
           </ToolTip>
         }
       </span>

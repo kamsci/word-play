@@ -67,7 +67,7 @@ class DescriptionReviewContainer extends Component {
   // }
 
   render() {
-    return <DescriptionReviewCard  title={this.state.title} description={this.state.description} />;
+    return <DescriptionReviewCard  title={this.state.title} description={this.state.description} synonyms={this.synonyms}/>;
   }
 }
 

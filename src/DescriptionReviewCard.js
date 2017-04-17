@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Word from './Word';
 import './DescriptionReviewCard.css';
-import ToolTip from 'react-portal-tooltip';
+
 ///////////////////////////////////////////
 
 class DescriptionReviewCard extends Component {
@@ -19,7 +19,8 @@ class DescriptionReviewCard extends Component {
           <h3>{this.props.title}</h3>
           {this.props.description.map((word, i) => 
             <Word key={i}
-                  word={word} />
+                  word={word}
+                  synonyms={this.props.synonyms} />
           )}
         </div>
     )
