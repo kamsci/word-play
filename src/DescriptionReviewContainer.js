@@ -14,21 +14,35 @@ class DescriptionReviewContainer extends Component {
     };
   }
 
-  // Get paragraph from input
   inputStringToArray = (input) => {
     // Parse paragraph into array
     let inputArr = input.split(" ");
-    let descriptionArr = inputArr.map((word, i) => {
-      if(this.isKeyWord(word) === true) {
-        return <span className="match" key={i}>{word}</span>
+    let descriptionArr = [];
+    
+    for(var i =0; i <inputArr.length; i++) {
+      let tempPhrase2 = inputArr[i] + " " + inputArr[i+1];
+      let tempPhrase3 = inputArr[i] + " " + inputArr[i+1] + " " + inputArr[i+2];
+
+        // if single key word
+      if(this.isKeyWord(inputArr[i]) === true) {
+        descriptionArr.push(<span className="match" key={i}>{inputArr[i]}</span>)
+      } // if 2 word phrase
+      else if (this.isKeyWord(tempPhrase2) === true) {
+        descriptionArr.push(<span className="match" key={i}>{tempPhrase2}</span>)
+        i++;
+      } // if 3 word phrase
+      else if (this.isKeyWord(tempPhrase3) === true) { 
+        descriptionArr.push(<span className="match" key={i}>{tempPhrase3}</span>)
+        i = i + 2;
+      } 
+      else {
+        descriptionArr.push(inputArr[i]);
       }
-        return word
-    })
-    console.log("description", descriptionArr)
+    }
     return descriptionArr;
   }
   
-  // Identify single key words/phrases is in dictionary
+  // Identify if key word/phrase is in dictionary
   isKeyWord = (word) => {
     word = word.toLowerCase();
     if(dictionary.hasOwnProperty(word)) {
@@ -38,25 +52,16 @@ class DescriptionReviewContainer extends Component {
     return false;
   }
 
- // Identify 2 word clusters
- isKeyTwoWords =(word) => {
+  // componentDidMount = () => {
+  //   console.log("DidMount", this.state)
+  //   // this.setState({
+  //   //   title: this.props.title
+  //   // })
+  // }
 
- }
-  componentDidMount = () => {
-    console.log("DidMount", this.state)
-    // this.setState({
-    //   title: this.props.title
-    // })
-  }
-
-    componentDidUpdate = () => {
-    console.log("DidUpdate", this.state)
-  }
-  
-
-  // Replace key words in sentence with span elements
-
-
+  //   componentDidUpdate = () => {
+  //   console.log("DidUpdate", this.state)
+  // }
 
   render() {
     return <DescriptionReviewCard  title={this.state.title} description={this.state.description} />;

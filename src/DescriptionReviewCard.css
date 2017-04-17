@@ -1,10 +1,11 @@
-
 .descriptionBox {
-  margin-top: 50px;
+  margin-top: 0px;
   margin-bottom: 50px;
   padding: 5px 50px;
   border-left: 1px solid lightgrey;
   border-right: 1px solid lightgrey;
+  font-size: 16px;
+  line-height: 24px;
 }
 p span:hover {
   text-decoration: underline;

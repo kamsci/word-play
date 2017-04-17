@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import JobReviewCardContainer from './JobReviewCardContainer';
 //import JobReviewCard from './JobReviewCard';
+import dictionary from '../dictionary.json';
 
 //////////////////////////////////////////
 
@@ -15,9 +16,12 @@ class App extends Component {
           <i className="fa fa-3x fa-circle-thin green"></i>
           <i className="fa fa-3x fa-circle-thin blue"></i>
           <div className="info pull-right">
-            <i className="fa fa-lg fa-info-circle"></i> Note to Bobby
+            <i className="fa fa-lg fa-info-circle"></i> Available key words
             <div className="note">
-              <p>Hi Bobby, I was having fun with React and decided to expand my original demo over the weekend.</p>
+              <h4>Available key words:</h4>
+              {Object.keys(dictionary).map((key, i) =>
+                <li key={i}>{key}</li>
+              )}
             </div>
           </div>
         </div>

@@ -46,11 +46,13 @@
 .note {
   position: fixed;
   z-index: 1;
+  overflow-y: scroll;
   right: 10px;
   visibility: hidden;
   
-  font-size: 16px;
-  width: 400px;
+  font-size: 14px;
+  min-width: 200px;
+  max-height: 400px;
   background-color: #f4f3f4;
   border: 1px solid lightgrey;
   border-radius: 5px;
