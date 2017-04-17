@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import Sentence from './Sentence';
+import Word from './Word';
 import './DescriptionReviewCard.css';
 
 ///////////////////////////////////////////
@@ -9,8 +9,10 @@ class DescriptionReviewCard extends Component {
   render() {
     return (
         <div className="descriptionBox">
-          <h3>Title</h3>
-          <p>Job Description</p>
+          <h3>{this.props.title}</h3>
+          {this.props.description.map((word, i) =>
+            <Word key={i} word={word} />
+          )}
         </div>
     )
   }

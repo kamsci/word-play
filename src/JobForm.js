@@ -30,8 +30,9 @@ class JobForm extends Component {
   }
   
   submitForm = (event) => {
+    console.log("Form")
+    this.props.processInput(this.state);
     event.preventDefault();
-    console.log("submit", this.state.title, this.state.description)
   }
 
   render() {
@@ -56,6 +57,7 @@ class JobForm extends Component {
           </div>
           <input type="submit" className="btn" value="Submit" />
         </form>
+        {/*<button onClick={this.submitForm} >Test</button>*/}
       </div>
     )
   }
