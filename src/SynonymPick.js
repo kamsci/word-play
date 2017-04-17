@@ -1,23 +1,38 @@
 import React, { Component } from'react';
 import './SynonymPick.css';
+import dictionary from '../dictionary.json';
 
 ///////////////////////////////////////////
 
 class SynonymPick extends Component {
+  constructor(props) {
+    super(props);
+    let word = props.wordObj.props.children.replace(/(,|:|\.)/g, "");
+
+    this.state = {
+      synonyms: this.getSynonyms(word)
+    }
+  }
+  
+  getSynonyms = (word) => {
+    let synonyms = dictionary[word];
+    return synonyms;
+  }
+
   changeWord = (syn) => {
     this.props.changeWord(syn);
+    this.setState({
+      synonyms: this.getSynonyms(syn)
+    });
   }
   
   render() {
-    let word = this.props.wordObj.props.children.replace(/(,|:|\.)/g, "");
-    let list = this.props.synonyms[word];
-
     return(
       <div>
         <p>Other words you can try:</p>
         <hr />
         <div className="synonymBox">
-          {list.map((syn, i) => 
+          {this.state.synonyms.map((syn, i) => 
             <div key={i} 
                 className="syn"
                 onClick={() => this.changeWord(syn)}>{syn}</div>

@@ -7,7 +7,7 @@ class DescriptionReviewContainer extends Component {
 
   constructor(props) {
     super(props);
-    this.synonyms = {};
+
     this.state = {
       title: props.title,
       description: this.inputStringToArray(props.description)     
@@ -26,14 +26,14 @@ class DescriptionReviewContainer extends Component {
 
         // if single key word
       if(this.isKeyWord(inputArr[i]) === true) {
-        descriptionArr.push(<span id={id} className="match" key={i}>{inputArr[i]}</span>)
+        descriptionArr.push(<span id={id} className="match" key={id}>{inputArr[i]}</span>)
       } // if 2 word phrase
       else if (this.isKeyWord(tempPhrase2) === true) {
-        descriptionArr.push(<span id={id} className="match" key={i}>{tempPhrase2}</span>)
+        descriptionArr.push(<span id={id} className="match" key={id}>{tempPhrase2}</span>)
         i++;
       } // if 3 word phrase
       else if (this.isKeyWord(tempPhrase3) === true) { 
-        descriptionArr.push(<span id={id} className="match" key={i}>{tempPhrase3}</span>)
+        descriptionArr.push(<span id={id} className="match" key={id}>{tempPhrase3}</span>)
         i += 2;
       } 
       else {
@@ -48,10 +48,7 @@ class DescriptionReviewContainer extends Component {
     word = word.toLowerCase();
     word = word.replace(/(,|:|\.)/g, "");
 
-    if(dictionary.hasOwnProperty(word)) {
-      this.synonyms[word] = dictionary[word];
-      return true;
-    }
+    if(dictionary.hasOwnProperty(word)) { return true; }
     return false;
   }
 
@@ -67,7 +64,7 @@ class DescriptionReviewContainer extends Component {
   // }
 
   render() {
-    return <DescriptionReviewCard  title={this.state.title} description={this.state.description} synonyms={this.synonyms}/>;
+    return <DescriptionReviewCard  title={this.state.title} description={this.state.description} />;
   }
 }
 

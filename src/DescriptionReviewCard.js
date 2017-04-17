@@ -19,8 +19,7 @@ class DescriptionReviewCard extends Component {
           <h3>{this.props.title}</h3>
           {this.props.description.map((word, i) => 
             <Word key={i}
-                  word={word}
-                  synonyms={this.props.synonyms} />
+                  word={word} />
           )}
         </div>
     )

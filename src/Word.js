@@ -10,7 +10,7 @@ class Word extends Component {
     super(props);
 
     this.state = {
-      word: props.word,
+      wordObj: props.word,
       isTooltipActive: false
     }
   }
@@ -24,8 +24,11 @@ class Word extends Component {
   }
 
   changeWord = (syn) => {
+    let key = this.state.wordObj.props.id.replace("#", "")
+    let tempObj = <span id={this.state.wordObj.props.id} className="match" key={key}>{syn}</span>;
+
     this.setState({
-      word: syn
+      wordObj: tempObj
     })
   }
 
@@ -43,16 +46,15 @@ class Word extends Component {
 
   render() {
     let id = "#";
-    if(this.props.word.props) {
-      id += this.props.word.props.id;
+    if(this.state.wordObj.props) {
+      id += this.state.wordObj.props.id;
     }
     return (
       <span>
-        <span onMouseEnter={this.showTooltip.bind(this)} onMouseLeave={this.hideTooltip.bind(this)}>{this.state.word} </span>
-        {this.props.word.props && 
+        <span onMouseEnter={this.showTooltip.bind(this)} onMouseLeave={this.hideTooltip.bind(this)}>{this.state.wordObj} </span>
+        {this.state.wordObj.props && 
           <ToolTip active={this.state.isTooltipActive} style={this.style} position="top" arrow="center" parent={id}>
-            <SynonymPick key={id} 
-                          synonyms={this.props.synonyms}
+            <SynonymPick key={id}
                           wordObj={this.props.word}
                           changeWord={this.changeWord} />
           </ToolTip>
