@@ -8,8 +8,8 @@ class JobForm extends Component {
     super(props);
 
     this.state = {
-      title: "",
-      description: ""
+      title: props.title,
+      description: props.description
     }
 
     this.handleTitleChange = this.handleTitleChange.bind(this);
@@ -28,7 +28,6 @@ class JobForm extends Component {
   }
   
   submitForm = (event) => {
-    console.log("Form")
     this.props.processInput(this.state);
     event.preventDefault();
   }
