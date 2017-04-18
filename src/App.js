@@ -18,10 +18,12 @@ class App extends Component {
           <div className="info pull-right">
             <i className="fa fa-lg fa-info-circle"></i> Available key words
             <div className="note">
-              <h4>Available key words:</h4>
-              {Object.keys(dictionary).map((key, i) =>
-                <li key={i}>{key}</li>
-              )}
+              <h5>Available key words:</h5>
+              <div className="list">
+                {Object.keys(dictionary).map((key, i) =>
+                  <div key={i}>{key}</div>
+                )}
+              </div>
             </div>
           </div>
         </div>

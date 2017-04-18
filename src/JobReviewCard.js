@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-// import './JobReviewCard.css';
-// import SentenceReviewCard from './SentenceReviewCard';
+import './JobReviewCard.css';
 import DescriptionReviewContainer from './DescriptionReviewContainer';
 import JobForm from './JobForm';
 
@@ -37,20 +36,21 @@ class JobReviewCard extends Component {
 
   render() {
     return (
-      <div>
-        {/*<p className="intro">Click on one of the alternative words to replace the highlighted word in your sentence:</p>*/}
-        <div className="container jobDescription">
-          {this.state.editMode &&
+      <div className="container jobDescription">
+        {this.state.editMode &&
+          <div>
+            <p className="intro">Submit a job description and we'll provide some alternative word suggestions.</p>
             <JobForm processInput={this.processInput} />
-          }
-          {!this.state.editMode &&
-            <div>
-              <DescriptionReviewContainer title={this.state.title} description={this.state.description} />
-              <button onClick={this.switchToEdit} type="button" className="btn">Edit</button>
-            </div>
-          }
-        </div>
-      </div>
+          </div>
+        }
+        {!this.state.editMode &&
+          <div>
+            <p className="intro">Hover over a highlighted word to see your synonym options, click to select.</p>
+            <DescriptionReviewContainer title={this.state.title} description={this.state.description} />
+            <button onClick={this.switchToEdit} type="button" className="btn">Edit</button>
+          </div>
+        }
+      </div>      
     );
   }
 }

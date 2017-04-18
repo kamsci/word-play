@@ -1,5 +1,5 @@
 .header {
-  margin-bottom: 40px;
+  margin-bottom: 70px;
   margin-left: 10px;
   margin-top: 10px;
   margin-right: 10px;
@@ -43,6 +43,13 @@
   font-size: 12px;
   cursor: pointer;
 }
+h5 {
+  text-align: center;
+  margin-top: 0;
+}
+.list {
+  margin-left: 50px;
+}
 .note {
   position: fixed;
   z-index: 1;
@@ -62,15 +69,12 @@
   visibility: visible;
 }
 
-/* On jobReviewCard.js */
-.intro {
-  text-align: center;
-  font-size: 20px;
-  margin-bottom: 20px;
-  color: #565354;
+/* All buttons */
+.btn {
+  background-color: #97c728;
+  color: #fff;
+  width: 70px;
 }
-
-/*All buttons*/
 .btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus {
     outline: 0;
     color: #fff;

@@ -1,5 +1,21 @@
 .jobDescription {
   width: 75%;
   margin: auto auto;
+  min-height: 600px;
   color: #6c696a;
+}
+.intro {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: #565354;
+}
+
+/* On JobForm & DescriptionReviewCard */
+.descriptionBox {
+  margin-top: 0px;
+  margin-bottom: 50px;
+  font-size: 16px;
+  line-height: 28px;
+  min-height: 200px;
 }

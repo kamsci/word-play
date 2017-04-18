@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './JobForm.css';
+// import './JobForm.css';
 
 ///////////////////////////////////////////
 
@@ -35,29 +35,27 @@ class JobForm extends Component {
 
   render() {
     return(
-      <div className="continer form">
-        <form onSubmit={this.submitForm}>
-          <div className="form-group">
-            <input id="title" 
-                   type="text"
-                   value={this.state.title}
-                   onChange={this.handleTitleChange} 
-                   className="form-control" 
-                   placeholder="Job Title"
-                   required />
-          </div>
-          <div className="form-group">
-            <textarea id="description" 
-                      type="text"
-                      value={this.state.description}
-                      onChange={this.handleDescriptionChange} 
-                      className="form-control" 
-                      placeholder="Job Descrption paragraph - no list items"
-                      required />
-          </div>
-          <input type="submit" className="btn" value="Submit" />
-        </form>
-      </div>
+      <form onSubmit={this.submitForm}>
+        <div className="form-group">
+          <input id="title" 
+                  type="text"
+                  value={this.state.title}
+                  onChange={this.handleTitleChange} 
+                  className="form-control" 
+                  placeholder="Job Title"
+                  required />
+        </div>
+        <div className="form-group">
+          <textarea id="description" 
+                    type="text"
+                    value={this.state.description}
+                    onChange={this.handleDescriptionChange} 
+                    className="form-control descriptionBox" 
+                    placeholder="Job Descrption paragraph - no list items"
+                    required />
+        </div>
+        <input type="submit" className="btn" value="Submit" />
+      </form>
     )
   }
   

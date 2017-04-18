@@ -1,12 +1,9 @@
-.descriptionBox {
-  margin-top: 0px;
-  margin-bottom: 50px;
-  padding: 5px 50px;
+h4 {
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+.jobBox {
   border-left: 1px solid lightgrey;
   border-right: 1px solid lightgrey;
-  font-size: 16px;
-  line-height: 24px;
-}
-p span:hover {
-  text-decoration: underline;
+  padding: 0px 10px;
 }
