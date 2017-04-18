@@ -8,7 +8,7 @@ import './Word.css';
 class Word extends Component {
   constructor(props) {
     super(props);
-
+    console.log("wordProps: ", props.wordObj)
     this.state = {
       wordObj: props.wordObj,
       isTooltipActive: false
@@ -16,6 +16,7 @@ class Word extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    console.log("WordReceive:", this.state.wordObj.key)
    this.setState({
       wordObj: nextProps.wordObj
     });
@@ -30,17 +31,19 @@ class Word extends Component {
   }
 
   changeWord = (syn) => {
-    let key = this.state.wordObj.props.id.replace("#", "")
+    console.log("WordChange:", this.state.wordObj.key)
+    let key = this.state.wordObj.key;
     let tempObj = <span id={this.state.wordObj.props.id} className="match" key={key}>{syn}</span>;
 
     this.setState({
       wordObj: tempObj
-    })
+    });
+
+    this.props.passToDescriptionReview(tempObj);
   }
 
   style = {
     style: {
-      // background: 'rgba(0,0,0,.8)',
       border: '1px solid rgba(249, 161, 50, 1)',
       padding: 20,
       boxShadow: '5px 5px 3px rgba(0,0,0,.3)'
@@ -55,6 +58,7 @@ class Word extends Component {
     if(this.state.wordObj.props) {
       id += this.state.wordObj.props.id;
     }
+    console.log("Word:", this.state.wordObj, this.state.wordObj.key)
     return (
       <span>
         <span onMouseEnter={this.showTooltip.bind(this)} onMouseLeave={this.hideTooltip.bind(this)}>{this.state.wordObj} </span>

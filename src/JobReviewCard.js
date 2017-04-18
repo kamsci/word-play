@@ -30,17 +30,15 @@ class JobReviewCard extends Component {
 
   }
 
-  componentDidUpdate = () => {
-    console.log(this.state.editMode);
-  }
-
   render() {
     return (
       <div className="container jobDescription">
         {this.state.editMode &&
           <div>
             <p className="intro">Submit a job description and we'll provide some alternative word suggestions.</p>
-            <JobForm processInput={this.processInput} />
+            <JobForm processInput={this.processInput} 
+                     title={this.state.title}
+                     description={this.state.description} />
           </div>
         }
         {!this.state.editMode &&

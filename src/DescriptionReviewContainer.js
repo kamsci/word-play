@@ -27,20 +27,21 @@ class DescriptionReviewContainer extends Component {
 
         // if single key word
       if(this.isKeyWord(inputArr[i]) === true) {
-        descriptionArr.push(<span id={id} className="match" key={id}>{inputArr[i]}</span>)
+        descriptionArr.push(<span id={id} className="match" key={i}>{inputArr[i]}</span>)
       } // if 2 word phrase
       else if (this.isKeyWord(tempPhrase2) === true) {
-        descriptionArr.push(<span id={id} className="match" key={id}>{tempPhrase2}</span>)
+        descriptionArr.push(<span id={id} className="match" key={i}>{tempPhrase2}</span>)
         i++;
       } // if 3 word phrase
       else if (this.isKeyWord(tempPhrase3) === true) { 
-        descriptionArr.push(<span id={id} className="match" key={id}>{tempPhrase3}</span>)
+        descriptionArr.push(<span id={id} className="match" key={i}>{tempPhrase3}</span>)
         i += 2;
       } 
       else {
         descriptionArr.push(inputArr[i]);
       }
     }
+    // console.log("descriptionArr: ", descriptionArr)
     return descriptionArr;
   }
   
@@ -61,8 +62,18 @@ class DescriptionReviewContainer extends Component {
     });
   }
 
+  passToJobReviewCard = (wordState) => {
+    console.log("DRC wordState", wordState, wordState.key)
+    console.log("DRC this", this.state.description[wordState.key])
+    let tempDescription = this.state.description;
+    tempDescription[wordState.key] = wordState;
+    // console.log("temp", tempDescription)
+  }
+
   render() {
-    return <DescriptionReviewCard  title={this.state.title} description={this.state.description} bool={this.state.bool} />;
+    return <DescriptionReviewCard  title={this.state.title} 
+                                   description={this.state.description}
+                                   passToDescriptionReviewContainer={this.passToJobReviewCard} />;
   }
 }
 
