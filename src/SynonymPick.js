@@ -25,6 +25,13 @@ class SynonymPick extends Component {
       synonyms: this.getSynonyms(syn)
     });
   }
+
+  componentWillReceiveProps(nextProps) {
+    let word = nextProps.wordObj.props.children.replace(/(,|:|\.)/g, "");
+    this.setState({ 
+      synonyms: this.getSynonyms(word)
+    });  
+  }
   
   render() {
     return(

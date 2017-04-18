@@ -17,13 +17,11 @@ class JobForm extends Component {
   }
 
   handleTitleChange = (event) => {
-    // console.log("submit title", event)
     this.setState({
       title: event.target.value
     })
   }
   handleDescriptionChange = (event) => {
-    // console.log("submit description", event)
     this.setState({
       description: event.target.value
     })
@@ -32,6 +30,7 @@ class JobForm extends Component {
   submitForm = (event) => {
     console.log("Form")
     this.props.processInput(this.state);
+    this.props.setBool();
     event.preventDefault();
   }
 
@@ -45,7 +44,8 @@ class JobForm extends Component {
                    value={this.state.title}
                    onChange={this.handleTitleChange} 
                    className="form-control" 
-                   placeholder="Job Title" />
+                   placeholder="Job Title"
+                   required />
           </div>
           <div className="form-group">
             <textarea id="description" 
@@ -53,11 +53,12 @@ class JobForm extends Component {
                       value={this.state.description}
                       onChange={this.handleDescriptionChange} 
                       className="form-control" 
-                      placeholder="Job Descrption paragraph - no list items"/>
+                      placeholder="Job Descrption paragraph - no list items"
+                      required />
           </div>
           <input type="submit" className="btn" value="Submit" />
         </form>
-        {/*<button onClick={this.submitForm} >Test</button>*/}
+        <button onClick={this.submitForm} >Test</button>
       </div>
     )
   }

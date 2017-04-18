@@ -10,9 +10,15 @@ class Word extends Component {
     super(props);
 
     this.state = {
-      wordObj: props.word,
+      wordObj: props.wordObj,
       isTooltipActive: false
     }
+  }
+
+  componentWillReceiveProps(nextProps) {
+   this.setState({
+      wordObj: nextProps.wordObj
+    });
   }
 
   showTooltip = () => {
@@ -55,7 +61,7 @@ class Word extends Component {
         {this.state.wordObj.props && 
           <ToolTip active={this.state.isTooltipActive} style={this.style} position="top" arrow="center" parent={id}>
             <SynonymPick key={id}
-                          wordObj={this.props.word}
+                          wordObj={this.props.wordObj}
                           changeWord={this.changeWord} />
           </ToolTip>
         }

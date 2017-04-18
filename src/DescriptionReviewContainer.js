@@ -9,8 +9,9 @@ class DescriptionReviewContainer extends Component {
     super(props);
 
     this.state = {
+      bool: props.bool,
       title: props.title,
-      description: this.inputStringToArray(props.description)     
+      description: this.inputStringToArray(props.description)
     };
   }
 
@@ -22,7 +23,7 @@ class DescriptionReviewContainer extends Component {
     for(var i =0; i <inputArr.length; i++) {
       let tempPhrase2 = inputArr[i] + " " + inputArr[i+1];
       let tempPhrase3 = inputArr[i] + " " + inputArr[i+1] + " " + inputArr[i+2];
-      let id = "W" + i;
+      let id = "Word" + i;
 
         // if single key word
       if(this.isKeyWord(inputArr[i]) === true) {
@@ -52,19 +53,16 @@ class DescriptionReviewContainer extends Component {
     return false;
   }
 
-  // componentDidMount = () => {
-  //   console.log("DidMount", this.state)
-  //   // this.setState({
-  //   //   title: this.props.title
-  //   // })
-  // }
-
-  //   componentDidUpdate = () => {
-  //   console.log("DidUpdate", this.state)
-  // }
+  componentWillReceiveProps = (nextProps) => {
+    this.setState({ 
+      bool: nextProps.bool,
+      title: nextProps.title,
+      description: this.inputStringToArray(nextProps.description)
+    });
+  }
 
   render() {
-    return <DescriptionReviewCard  title={this.state.title} description={this.state.description} />;
+    return <DescriptionReviewCard  title={this.state.title} description={this.state.description} bool={this.state.bool} />;
   }
 }
 

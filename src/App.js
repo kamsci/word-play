@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import JobReviewCardContainer from './JobReviewCardContainer';
+import JobReviewCard from './JobReviewCard';
 //import JobReviewCard from './JobReviewCard';
 import dictionary from '../dictionary.json';
 
@@ -25,7 +25,7 @@ class App extends Component {
             </div>
           </div>
         </div>
-        <JobReviewCardContainer />
+        <JobReviewCard />
         <div className="footer">
           <p className="name">powered by <a href="http://kristacalderon.com" target="_blank">KristaCalderon</a></p>
           <p className="github pull-right">sourceCode:

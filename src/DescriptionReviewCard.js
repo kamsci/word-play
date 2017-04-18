@@ -5,13 +5,6 @@ import './DescriptionReviewCard.css';
 ///////////////////////////////////////////
 
 class DescriptionReviewCard extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      isTooltipActive: true
-    }
-  }
 
   render() {
     return (
@@ -19,7 +12,7 @@ class DescriptionReviewCard extends Component {
           <h3>{this.props.title}</h3>
           {this.props.description.map((word, i) => 
             <Word key={i}
-                  word={word} />
+                  wordObj={word} />
           )}
         </div>
     )
