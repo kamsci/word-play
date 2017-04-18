@@ -10,6 +10,7 @@ class JobReviewCard extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      editMode: true,
       title: "",
       description: ""
     }
@@ -17,9 +18,21 @@ class JobReviewCard extends Component {
 
   processInput = (input) => {
     this.setState({
+      editMode: false,
       description: input.description,
       title: input.title      
     });
+  }
+
+  switchToEdit = () => {
+    this.setState(prevState => ({
+      editMode: !prevState.editMode
+    }));
+
+  }
+
+  componentDidUpdate = () => {
+    console.log(this.state.editMode);
   }
 
   render() {
@@ -27,8 +40,15 @@ class JobReviewCard extends Component {
       <div>
         {/*<p className="intro">Click on one of the alternative words to replace the highlighted word in your sentence:</p>*/}
         <div className="container jobDescription">
-          <DescriptionReviewContainer title={this.state.title} description={this.state.description} />
-          <JobForm processInput={this.processInput} />
+          {this.state.editMode &&
+            <JobForm processInput={this.processInput} />
+          }
+          {!this.state.editMode &&
+            <div>
+              <DescriptionReviewContainer title={this.state.title} description={this.state.description} />
+              <button onClick={this.switchToEdit} type="button" className="btn">Edit</button>
+            </div>
+          }
         </div>
       </div>
     );
