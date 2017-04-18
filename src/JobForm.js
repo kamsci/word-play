@@ -30,7 +30,6 @@ class JobForm extends Component {
   submitForm = (event) => {
     console.log("Form")
     this.props.processInput(this.state);
-    this.props.setBool();
     event.preventDefault();
   }
 
@@ -58,7 +57,6 @@ class JobForm extends Component {
           </div>
           <input type="submit" className="btn" value="Submit" />
         </form>
-        <button onClick={this.submitForm} >Test</button>
       </div>
     )
   }
