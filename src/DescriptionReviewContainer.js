@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import DescriptionReviewCard from './DescriptionReviewCard';
-import dictionary from '../dictionary.json';
+import dictionary from './dictionary.json';
 
 class DescriptionReviewContainer extends Component {
   /* Container class to handle source of data*/

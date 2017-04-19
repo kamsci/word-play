@@ -1,6 +1,6 @@
 import React, { Component } from'react';
 import './SynonymPick.css';
-import dictionary from '../dictionary.json';
+import dictionary from './dictionary.json';
 
 ///////////////////////////////////////////
 
