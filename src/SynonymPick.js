@@ -7,10 +7,10 @@ import dictionary from '../dictionary.json';
 class SynonymPick extends Component {
   constructor(props) {
     super(props);
-    let word = props.wordObj.props.children.replace(/(,|:|\.)/g, "");
+    let getWord = props.wordObj.props.children.replace(/(,|:|\.)/g, "");
 
     this.state = {
-      synonyms: this.getSynonyms(word)
+      synonyms: this.getSynonyms(getWord)
     }
   }
   
@@ -19,17 +19,17 @@ class SynonymPick extends Component {
     return synonyms;
   }
 
-  changeWord = (syn) => {
-    this.props.changeWord(syn);
+  swapWord = (syn) => {
+    this.props.swapWord(syn);
     this.setState({
       synonyms: this.getSynonyms(syn)
     });
   }
 
   componentWillReceiveProps(nextProps) {
-    let word = nextProps.wordObj.props.children.replace(/(,|:|\.)/g, "");
+    let getWord = nextProps.wordObj.props.children.replace(/(,|:|\.)/g, "");
     this.setState({ 
-      synonyms: this.getSynonyms(word)
+      synonyms: this.getSynonyms(getWord)
     });  
   }
   
@@ -42,7 +42,7 @@ class SynonymPick extends Component {
           {this.state.synonyms.map((syn, i) => 
             <div key={i} 
                 className="syn"
-                onClick={() => this.changeWord(syn)}>{syn}</div>
+                onClick={() => this.swapWord(syn)}>{syn}</div>
           )}
         </div>
       </div>

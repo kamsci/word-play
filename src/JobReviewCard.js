@@ -27,7 +27,12 @@ class JobReviewCard extends Component {
     this.setState(prevState => ({
       editMode: !prevState.editMode
     }));
+  }
 
+  updateDescription = (newDescription) => {
+    this.setState({
+      description: newDescription
+    })
   }
 
   render() {
@@ -44,7 +49,9 @@ class JobReviewCard extends Component {
         {!this.state.editMode &&
           <div>
             <p className="intro">Hover over a highlighted word to see your synonym options, click to select.</p>
-            <DescriptionReviewContainer title={this.state.title} description={this.state.description} />
+            <DescriptionReviewContainer title={this.state.title} 
+                                        description={this.state.description}
+                                        passToJobReviewCard={this.updateDescription} />
             <button onClick={this.switchToEdit} type="button" className="btn">Edit</button>
           </div>
         }

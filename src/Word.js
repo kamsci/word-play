@@ -8,7 +8,7 @@ import './Word.css';
 class Word extends Component {
   constructor(props) {
     super(props);
-    // console.log("wordProps: ", props.wordObj)
+
     this.state = {
       wordObj: props.wordObj,
       isTooltipActive: false
@@ -16,7 +16,6 @@ class Word extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    console.log("WordReceive:", this.state.wordObj.key)
    this.setState({
       wordObj: nextProps.wordObj
     });
@@ -30,10 +29,10 @@ class Word extends Component {
     this.setState({isTooltipActive: false})
   }
 
-  changeWord = (syn) => {
-    // console.log("WordChange:", this.state.wordObj.key)
+  swapWord = (syn) => {
     let key = this.state.wordObj.key;
-    let tempObj = <span id={this.state.wordObj.props.id} className="match" key={key}>{syn}</span>;
+    let id = "Word" + key;
+    let tempObj = <span id={id} className="match" key={key}>{syn}</span>
 
     this.setState({
       wordObj: tempObj
@@ -58,7 +57,6 @@ class Word extends Component {
     if(this.state.wordObj.props) {
       id += this.state.wordObj.props.id;
     }
-    console.log("Word:", this.state.wordObj, this.state.wordObj.key)
     return (
       <span>
         <span onMouseEnter={this.showTooltip.bind(this)} onMouseLeave={this.hideTooltip.bind(this)}>{this.state.wordObj} </span>
@@ -66,7 +64,7 @@ class Word extends Component {
           <ToolTip active={this.state.isTooltipActive} style={this.style} position="top" arrow="center" parent={id}>
             <SynonymPick key={id}
                           wordObj={this.props.wordObj}
-                          changeWord={this.changeWord} />
+                          swapWord={this.swapWord} />
           </ToolTip>
         }
       </span>

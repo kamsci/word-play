@@ -11,7 +11,6 @@ class DescriptionReviewCard extends Component {
     this.props.passToDescriptionReviewContainer(wordState);
   }
   render() {
-    // console.log("DRCard:", this.props.description)
     return (
       <div className="jobBox">
         <h4>{this.props.title}</h4>
