@@ -1,44 +1,61 @@
 import React, { Component } from 'react';
-//import './JobReviewCard.css';
-import SentenceReviewCard from './SentenceReviewCard';
-import DescriptionReviewCard from './DescriptionReviewCard';
+import './JobReviewCard.css';
+import DescriptionReviewContainer from './DescriptionReviewContainer';
+import JobForm from './JobForm';
 
 //////////////////////////////////////////
 
 class JobReviewCard extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
-      activeIndex: 0
+      editMode: true,
+      title: "",
+      description: ""
     }
   }
 
-  selectSentenceForReview = (idx) => {
+  processInput = (input) => {
     this.setState({
-      activeIndex: idx
+      editMode: false,
+      description: input.description,
+      title: input.title      
+    });
+  }
+
+  switchToEdit = () => {
+    this.setState(prevState => ({
+      editMode: !prevState.editMode
+    }));
+  }
+
+  updateDescription = (newDescription) => {
+    this.setState({
+      description: newDescription
     })
   }
 
-  passUpdateJobRequest = (sentence, wordInUse, wordList) => {
-    this.props.passUpdateJobRequest(this.state.activeIndex, sentence, wordInUse, wordList)
-  }
-  
   render() {
     return (
-      <div>
-        <p className="intro">Click on one of the alternative words to replace the highlighted word in your sentence:</p>
-        <SentenceReviewCard
-          key={this.state.activeIndex}
-          job={this.props.job[this.state.activeIndex]}
-          passUpdateJobRequest={this.passUpdateJobRequest}
-           />
-        <DescriptionReviewCard 
-          title={this.props.title} 
-          job={this.props.job}
-          passClickFunction={this.selectSentenceForReview} />
-      </div>
-
+      <div className="container jobDescription">
+        {this.state.editMode &&
+          <div>
+            <p className="intro">Submit a job description and we'll provide some alternative word suggestions.</p>
+            <JobForm processInput={this.processInput} 
+                     title={this.state.title}
+                     description={this.state.description} />
+          </div>
+        }
+        {!this.state.editMode &&
+          <div>
+            <p className="intro">Hover over a highlighted word to see your synonym options, click to select.</p>
+            <DescriptionReviewContainer title={this.state.title} 
+                                        description={this.state.description}
+                                        passToJobReviewCard={this.updateDescription} />
+            <button onClick={this.switchToEdit} type="button" className="btn">Edit</button>
+          </div>
+        }
+      </div>      
     );
   }
 }

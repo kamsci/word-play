@@ -1,0 +1,122 @@
+exports[`test JobReviewCard changes when editMode toggles 1`] = `
+<div
+  className="container jobDescription">
+  <div>
+    <p
+      className="intro">
+      Submit a job description and we\'ll provide some alternative word suggestions.
+    </p>
+    <form
+      onSubmit={[Function]}>
+      <div
+        className="form-group">
+        <input
+          className="form-control"
+          id="title"
+          onChange={[Function]}
+          placeholder="Job Title"
+          required={true}
+          type="text"
+          value="" />
+      </div>
+      <div
+        className="form-group">
+        <textarea
+          className="form-control descriptionBox"
+          id="description"
+          onChange={[Function]}
+          placeholder="Job Descrption paragraph - no list items"
+          required={true}
+          type="text"
+          value="" />
+      </div>
+      <input
+        className="btn"
+        type="submit"
+        value="Submit" />
+    </form>
+  </div>
+</div>
+`;
+
+exports[`test JobReviewCard changes when editMode toggles 2`] = `
+<div
+  className="container jobDescription">
+  <div>
+    <p
+      className="intro">
+      Submit a job description and we\'ll provide some alternative word suggestions.
+    </p>
+    <form
+      onSubmit={[Function]}>
+      <div
+        className="form-group">
+        <input
+          className="form-control"
+          id="title"
+          onChange={[Function]}
+          placeholder="Job Title"
+          required={true}
+          type="text"
+          value="" />
+      </div>
+      <div
+        className="form-group">
+        <textarea
+          className="form-control descriptionBox"
+          id="description"
+          onChange={[Function]}
+          placeholder="Job Descrption paragraph - no list items"
+          required={true}
+          type="text"
+          value="" />
+      </div>
+      <input
+        className="btn"
+        type="submit"
+        value="Submit" />
+    </form>
+  </div>
+</div>
+`;
+
+exports[`test JobReviewCard changes when editMode toggles 3`] = `
+<div
+  className="container jobDescription">
+  <div>
+    <p
+      className="intro">
+      Submit a job description and we\'ll provide some alternative word suggestions.
+    </p>
+    <form
+      onSubmit={[Function]}>
+      <div
+        className="form-group">
+        <input
+          className="form-control"
+          id="title"
+          onChange={[Function]}
+          placeholder="Job Title"
+          required={true}
+          type="text"
+          value="" />
+      </div>
+      <div
+        className="form-group">
+        <textarea
+          className="form-control descriptionBox"
+          id="description"
+          onChange={[Function]}
+          placeholder="Job Descrption paragraph - no list items"
+          required={true}
+          type="text"
+          value="" />
+      </div>
+      <input
+        className="btn"
+        type="submit"
+        value="Submit" />
+    </form>
+  </div>
+</div>
+`;

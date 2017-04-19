@@ -1,15 +1,9 @@
-.page {
-  width: 75%;
-  margin: auto auto;
-  color: #6c696a;
+h4 {
+  margin-bottom: 20px;
+  font-size: 22px;
 }
-.descriptionBox {
-  margin-top: 50px;
-  margin-bottom: 50px;
-  padding: 5px 50px;
+.jobBox {
   border-left: 1px solid lightgrey;
   border-right: 1px solid lightgrey;
-}
-p span:hover {
-  text-decoration: underline;
+  padding: 0px 10px;
 }

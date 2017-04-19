@@ -1,0 +1,17 @@
+.synonymBox {
+    margin-top: 10px;;
+}
+.syn {
+    text-align: center;
+    cursor: pointer;
+    padding: 4px 0px;
+}
+hr {
+    margin: 2px 0px;
+    border: 1px solid rgba(249, 161, 50, .6);
+}
+p {
+     font-size: 16px;
+     margin: 0 0;
+     text-decoration: bold;
+ }
