@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SynonymPick from './SynonymPick'
+import SynonymPick from './SynonymPick';
 import ToolTip from 'react-portal-tooltip';
 import './Word.css';
 
@@ -8,7 +8,7 @@ import './Word.css';
 class Word extends Component {
   constructor(props) {
     super(props);
-    console.log("wordProps: ", props.wordObj)
+    // console.log("wordProps: ", props.wordObj)
     this.state = {
       wordObj: props.wordObj,
       isTooltipActive: false
@@ -31,7 +31,7 @@ class Word extends Component {
   }
 
   changeWord = (syn) => {
-    console.log("WordChange:", this.state.wordObj.key)
+    // console.log("WordChange:", this.state.wordObj.key)
     let key = this.state.wordObj.key;
     let tempObj = <span id={this.state.wordObj.props.id} className="match" key={key}>{syn}</span>;
 

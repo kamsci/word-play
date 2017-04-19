@@ -5,7 +5,7 @@ import DescriptionReviewContainer from './DescriptionReviewContainer';
 import JobForm from './JobForm';
 import renderer from 'react-test-renderer';
 
-it('renders without crashing', () => {
+it('JobReviewCard renders without crashing', () => {
   const div = document.createElement('div');
   ReactDOM.render(<JobReviewCard />, div);
 });
@@ -30,3 +30,5 @@ test('JobReviewCard changes when editMode toggles', () => {
   tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });
+
+test('JobReviewCard')

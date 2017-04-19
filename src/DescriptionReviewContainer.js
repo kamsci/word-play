@@ -63,8 +63,8 @@ class DescriptionReviewContainer extends Component {
   }
 
   passToJobReviewCard = (wordState) => {
-    console.log("DRC wordState", wordState, wordState.key)
-    console.log("DRC this", this.state.description[wordState.key])
+    // console.log("DRC wordState", wordState, wordState.key)
+    // console.log("DRC this", this.state.description[wordState.key])
     let tempDescription = this.state.description;
     tempDescription[wordState.key] = wordState;
     // console.log("temp", tempDescription)
