@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import JobReviewCard from './JobReviewCard';
-//import JobReviewCard from './JobReviewCard';
-import dictionary from '../dictionary.json';
+import dictionary from './dictionary.json';
 
 //////////////////////////////////////////
 

@@ -32,6 +32,14 @@ class JobForm extends Component {
     event.preventDefault();
   }
 
+  clearForm = (event) => {
+    this.setState({
+      title: "",
+      description: ""
+    });
+    event.preventDefault();
+  }
+
   render() {
     return(
       <form onSubmit={this.submitForm}>
@@ -41,7 +49,7 @@ class JobForm extends Component {
                   value={this.state.title}
                   onChange={this.handleTitleChange} 
                   className="form-control" 
-                  placeholder="Job Title"
+                  placeholder="Job title"
                   required />
         </div>
         <div className="form-group">
@@ -50,10 +58,14 @@ class JobForm extends Component {
                     value={this.state.description}
                     onChange={this.handleDescriptionChange} 
                     className="form-control descriptionBox" 
-                    placeholder="Job Descrption paragraph - no list items"
+                    placeholder="Plain text job descrption"
                     required />
         </div>
-        <input type="submit" className="btn" value="Submit" />
+         <p className="tip"><small>See our list of key words by hovering over the info icon in the top right corner.</small></p>
+        <div>
+          <input type="submit" className="btn" value="Save" />
+          <button className="btn btn-danger pull-right" onClick={this.clearForm}>Clear</button>
+        </div>
       </form>
     )
   }

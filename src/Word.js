@@ -32,7 +32,11 @@ class Word extends Component {
   swapWord = (syn) => {
     let key = this.state.wordObj.key;
     let id = "Word" + key;
-    let tempObj = <span id={id} className="match" key={key}>{syn}</span>
+    let tempWord = this.state.wordObj.props.children.replace(/(,|!|\?|:|\.)/g, "");
+    let re = new RegExp(tempWord, "i");
+
+    let newWord = this.state.wordObj.props.children.replace(re, syn);
+    let tempObj = <span id={id} className="match" key={key}>{newWord}</span>
 
     this.setState({
       wordObj: tempObj
