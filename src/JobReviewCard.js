@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './JobReviewCard.css';
 import DescriptionReviewContainer from './DescriptionReviewContainer';
 import JobForm from './JobForm';
+import defaultJob from './defaultJob.json';
 
 //////////////////////////////////////////
 
@@ -10,8 +11,8 @@ class JobReviewCard extends Component {
     super(props);
     this.state = {
       editMode: true,
-      title: "",
-      description: ""
+      title: defaultJob.title,
+      description: defaultJob.description
     }
   }
 
@@ -40,7 +41,9 @@ class JobReviewCard extends Component {
       <div className="container jobDescription">
         {this.state.editMode &&
           <div>
-            <p className="intro">Submit a job description and we'll provide some alternative word suggestions.</p>
+            <div className="intro">
+              <p>Submit a job description and we'll highlight some key performance words and provide alternative word suggestions.</p>
+            </div>
             <JobForm processInput={this.processInput} 
                      title={this.state.title}
                      description={this.state.description} />
@@ -48,10 +51,13 @@ class JobReviewCard extends Component {
         }
         {!this.state.editMode &&
           <div>
-            <p className="intro">Hover over a highlighted word to see your synonym options, click to select.</p>
+            <div className="intro">
+              <p>Hover over a highlighted word to see your alternative word options. Click on a word to select and replace.</p>
+            </div>
             <DescriptionReviewContainer title={this.state.title} 
                                         description={this.state.description}
                                         passToJobReviewCard={this.updateDescription} />
+            <p className="tip"><small>Don't worry, if you need to edit your original description, your new word options will be saved!</small></p>
             <button onClick={this.switchToEdit} type="button" className="btn">Edit</button>
           </div>
         }

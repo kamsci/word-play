@@ -7,7 +7,7 @@ import dictionary from '../dictionary.json';
 class SynonymPick extends Component {
   constructor(props) {
     super(props);
-    let getWord = props.wordObj.props.children.replace(/(,|:|\.)/g, "");
+    let getWord = props.wordObj.props.children.replace(/(,|!|\?|:|\.)/g, "");
 
     this.state = {
       synonyms: this.getSynonyms(getWord)
@@ -27,7 +27,7 @@ class SynonymPick extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    let getWord = nextProps.wordObj.props.children.replace(/(,|:|\.)/g, "");
+    let getWord = nextProps.wordObj.props.children.replace(/(,|!|\?|:|\.)/g, "");
     this.setState({ 
       synonyms: this.getSynonyms(getWord)
     });  

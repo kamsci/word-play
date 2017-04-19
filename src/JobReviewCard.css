@@ -6,16 +6,21 @@
 }
 .intro {
   text-align: center;
-  font-size: 18px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
   color: #565354;
+}
+.intro p {
+  font-size: 18px;
+}
+.tip {
+  margin-bottom: 30px;
 }
 
 /* On JobForm & DescriptionReviewCard */
 .descriptionBox {
   margin-top: 0px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   font-size: 16px;
   line-height: 28px;
-  min-height: 200px;
+  min-height: 300px;
 }
