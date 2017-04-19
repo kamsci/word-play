@@ -48,7 +48,7 @@ class DescriptionReviewContainer extends Component {
   // Identify if key word/phrase is in dictionary
   isKeyWord = (word) => {
     word = word.toLowerCase();
-    word = word.replace(/(,|:|\.)/g, "");
+    word = word.replace(/(,|!|\?|:|\.)/g, "");
 
     if(dictionary.hasOwnProperty(word)) { return true; }
     return false;
