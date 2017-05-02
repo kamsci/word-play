@@ -4,35 +4,29 @@ w: kristacalderon.com/word-play
 #### Summary
 For my first foray into React, I created a small application that allows a user to view a job description and change highlighted words to a suggested alternative. 
 
-   The application has 2 main user sections:  
-* Sentence Review and Update
-* Job Description
+   The application has 2 main user components:  
+* Job description input form
+* Job description review and update 
 
-In the Job Description section, the user can click on a sentence and bring it to the Sentence Review section for updating. 
+In the input form, the user can enter a job description for review. (In order to see the functionality, use some of the key words listed in the top right tooltip). Clicking submit will switch from an input form to display the job with key words highlighted.
 
-In the Sentence Review section, the use can replace the highlighted word with one of the alternative choices by clicking on it. When the user clicks 'Update', the sentence and the Job Description section is updated with the new selected word.
+In the Job description review and update component, the user can hover over a highlighted word and a tooltip modal will appear with alternative word choices. Just click on a word to replace it in the job description. If the user clicks 'Edit', the synonym updates to the description will presist.
 
-For now, only one word can be highlighted and replaced per sentence.
 
 #### Component Tree
 * App
-  * JobReviewCardContainer
-    * JobReviewCard
-      * SentenceReviewCard
-        * Sentence
+  * JobReviewCard
+    * JobForm
+    * DescriptionReviewContiner
+      * DescriptionReviewCard
         * WordList
-      * DescriptionCard
-        * Sentence 
+          * SynonymPick (In tooltip)
 
 #### Data Assumptions
- - The job is an array of objects containing 3 keys: 'sentence', 'wordInUse', 'wordOptions'.
- - Each 'sentance' contains a single key word that has already been flagged and is defined as the 'wordInUse. 
- - A list of alternative word options have been identified and are listed in an array in 'wordOptions'. 
- - The 'wordInUse' only exists a singular time in a sentence and not at the beginning. 
-   - Example: If 'wordInUse' is 'creative', this scenario is not supported > "Creative thinking is a must in this creative position."
+ - The job is entered in plain text, Word doc pastes can carry other formatting characters and can interfere with functionality. 
+ - A dictionary of words has been identified and is listed in the tooltip at the tip right, only these words are editable. 
+ - At this time, if the 'word' is at the beginning of a sentence, it will not be capitalized. 
    
-   ***Plug for Database Call*** 
-   The container JobReviewCardContainer was created to separate the call to get data from the JobReviewCard functionality. In the future I could set up a call to a database or API, but currently the data is hardcoded.
 
 ---------------------------------------
 
